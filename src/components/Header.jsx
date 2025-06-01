@@ -35,7 +35,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <img 
-            src="src\photos\cleandive_logo.png" 
+            src="src/photos/cleandive_logo.png" 
             alt="Clean Dive Logo" 
             className="h-20 w-20 md:h-24  rounded-full"
           />

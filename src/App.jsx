@@ -1,6 +1,6 @@
 import React from 'react';
+
 import Header from './components/Header';
-import Header1 from './components/Header1';
 import Hero from './components/Hero';
 import Vision from './components/Vision';
 import Services from './components/Services';
@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
-              <Header1 />
+              <Header />
               <Hero />
               <Vision />
               <Services />
@@ -35,7 +35,7 @@ function App() {
 
           <Route path="/services" element={
             <>
-              <Header1 />
+              <Header />
               <div className="py-8 px-4 max-w-5xl mx-auto">
                 <Services />
               </div>
@@ -45,7 +45,7 @@ function App() {
 
           <Route path="/about" element={
             <>
-              <Header1 />
+              <Header />
               <div className="py-8 px-4 max-w-4xl mx-auto">
                 <Vision />
               </div>
@@ -55,7 +55,7 @@ function App() {
 
           <Route path="/contact" element={
             <>
-              <Header1 />
+              <Header />
              <div className='py-8 px-4 '>
 
                 <Contact />
@@ -66,7 +66,7 @@ function App() {
           } />
             <Route path="/schedule-pickup" element={
             <>
-              <Header1 />
+              <Header />
              <div className=' '>
 
                 <SchedulePickup />
@@ -77,7 +77,7 @@ function App() {
           } />
           <Route path="/checkout" element={
             <>
-              <Header1 />
+              <Header />
              <div className=' '>
 
                 <Checkout />
@@ -87,7 +87,7 @@ function App() {
             </>
           } />
 
-          <Route path='/pricing' element={<> <Header1 />
+          <Route path='/pricing' element={<> <Header />
              
             <Pricing/>
               

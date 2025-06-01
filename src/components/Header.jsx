@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-// Header component with sticky navigation and mobile responsiveness
-// Features smooth scrolling and dynamic background on scroll
-const Header = () => {
+const Header1 = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -11,7 +10,6 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -20,65 +18,71 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
-    }
-  };
-
   return (
-    <header 
-      className={`fixed w-full z-50 transition-all duration-300 bg-white }`}
-    >
-      <div className="container mx-auto px-4 flex justify-between items-center">
+    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white'}`}>
+      <div className="container mx-auto px-4 flex justify-between items-center py-2">
+        {/* Logo */}
         <div className="flex items-center">
-          <img 
-            src="src/photos/cleandive_logo.png" 
-            alt="Clean Dive Logo" 
-            className="h-20 w-20 md:h-24  rounded-full"
+          <img
+            src="public/cleandive_logo.png"
+            alt="Clean Dive Logo"
+            className="h-16 w-16 md:h-20 rounded-full"
           />
           <span className="font-bold text-2xl text-indigo-900 ml-2">Clean Dive</span>
         </div>
-        
+
+        {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
-            {['services', 'about', 'why-us', 'contact'].map((item) => (
-              <li key={item}>
-                <button 
-                  onClick={() => scrollToSection(item)}
-                  className={`font-medium hover:text-indigo-600 transition-colors ${
+            {[
+              { label: "Home", href: "/" },
+              { label: "About Us", href: "/about" },
+              { label: "Services", href: "/services" },
+              { label: "Pricing", href: "/pricing" },
+              { label: "Contact", href: "/contact" },
+            ].map((link, index) => (
+              <li key={index}>
+                <Link
+                  to={link.href}
+                  className={`font-medium transition-colors ${
                     isScrolled ? 'text-gray-800' : 'text-gray-800'
-                  }`}
+                  } hover:text-indigo-600`}
                 >
-                  {item.charAt(0).toUpperCase() + item.slice(1).replace('-', ' ')}
-                </button>
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
-        
-        <button 
+
+        {/* Mobile Menu Toggle */}
+        <button
           className="md:hidden text-indigo-900 focus:outline-none"
           onClick={toggleMenu}
         >
-          {isOpen ? <X size={24}  /> : <Menu size={24} />}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-      
-      {/* Mobile Menu */}
+
+      {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden bg-white text-gray-800 shadow-lg">
-          <ul className="py-4">
-            {['services', 'about', 'why-us', 'contact'].map((item) => (
-              <li key={item} className="py-2">
-                <button 
-                  onClick={() => scrollToSection(item)}
-                  className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+          <ul className="py-4 space-y-2 px-4">
+            {[
+              { label: "Home", href: "/" },
+              { label: "About Us", href: "/about" },
+              { label: "Services", href: "/services" },
+              { label: "Pricing", href: "/pricing" },
+              { label: "Contact", href: "/contact" },
+            ].map((link, index) => (
+              <li key={index}>
+                <Link
+                  to={link.href}
+                  className="block px-2 py-2 rounded hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                  onClick={() => setIsOpen(false)} // close menu after click
                 >
-                  {item.charAt(0).toUpperCase() + item.slice(1).replace('-', ' ')}
-                </button>
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -88,4 +92,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header1;

@@ -4,7 +4,7 @@ import ServiceSelection from './ServiceSelection';
 const laundries = [
   {
     id: 1,
-    name: "Fresh & Clean Laundry",
+    name: "Tumble-Dry Laundry Services",
     rating: 4.8,
     deliveryTime: "24-48 hours",
     minOrder: 50,
@@ -13,7 +13,7 @@ const laundries = [
   },
   {
     id: 2,
-    name: "Quick Wash Center",
+    name: "UltraWhite Wash Center",
     rating: 4.5,
     deliveryTime: "Same day",
     minOrder: 75,

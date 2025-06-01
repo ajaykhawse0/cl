@@ -24,7 +24,7 @@ const Header1 = () => {
         {/* Logo */}
         <div className="flex items-center">
           <img
-            src="public/cleandive_logo.png"
+            src="dist/assets/cleandive_logo-DWj-kn9b.png"
             alt="Clean Dive Logo"
             className="h-16 w-16 md:h-20 rounded-full"
           />

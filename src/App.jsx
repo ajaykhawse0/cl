@@ -12,6 +12,7 @@ import Pricing from './components/Pricing';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route  } from "react-router";
 import SchedulePickup from './components/Pickup/SchedulePickup';
+import Donation from './components/Donations';
 import Checkout from './components/Checkout/Checkout';
 // Main App component that serves as the root of our application
 // Organizes all major sections in a logical flow
@@ -90,6 +91,12 @@ function App() {
           <Route path='/pricing' element={<> <Header />
              
             <Pricing/>
+              
+              <Footer />
+              </>}/>
+          <Route path='/donations' element={<> <Header />
+              <div className='py-12 px-8 '>
+            <Donation/></div>
               
               <Footer />
               </>}/>

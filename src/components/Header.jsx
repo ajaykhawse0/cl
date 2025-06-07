@@ -40,6 +40,7 @@ const Header1 = () => {
               { label: "Services", href: "/services" },
               { label: "Pricing", href: "/pricing" },
               { label: "Contact", href: "/contact" },
+              { label: "Donation", href: "/donations" },
             ].map((link, index) => (
               <li key={index}>
                 <Link
@@ -74,6 +75,7 @@ const Header1 = () => {
               { label: "Services", href: "/services" },
               { label: "Pricing", href: "/pricing" },
               { label: "Contact", href: "/contact" },
+              { label: "Donation", href: "/donations" },
             ].map((link, index) => (
               <li key={index}>
                 <Link

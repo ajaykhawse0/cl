@@ -95,7 +95,7 @@ function App() {
               <Footer />
               </>}/>
           <Route path='/donations' element={<> <Header />
-              <div className='py-12 px-8 '>
+              <div className='py-24 px-8 '>
             <Donation/></div>
               
               <Footer />

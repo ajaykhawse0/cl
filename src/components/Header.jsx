@@ -21,15 +21,15 @@ const Header1 = () => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center py-2">
-        {/* Logo */}
+        {/* Logo */}<a href="/">
         <div className="flex items-center">
           <img
             src="/cleandive_logo.png"
             alt="Clean Dive Logo"
             className="h-16 w-16 md:h-20 rounded-full"
           />
-          <span className="font-bold text-2xl text-indigo-900 ml-2">Clean Dive</span>
-        </div>
+          <span className="font-bold text-2xl text-indigo-900 ml-2">CleanDive</span>
+       </div></a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block">

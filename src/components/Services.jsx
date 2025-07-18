@@ -1,5 +1,5 @@
 import React from 'react';
-import { Truck, Leaf, Shirt, ArrowRight } from 'lucide-react';
+import { Truck, Leaf, Shirt, ArrowRight,ArrowDown } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
@@ -28,7 +28,7 @@ const Services = () => {
         "Energy-efficient equipment",
         "Minimal plastic packaging"
       ],
-      image: "https://images.pexels.com/photos/5591681/pexels-photo-5591681.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: "https://cdn.shopify.com/s/files/1/0669/1684/3771/files/Eco-Friendly-and-Sustainable-Laundry-Routine-in-2023.jpg"
     },
     {
       icon: <Shirt className="h-12 w-12 text-blue-600" />,
@@ -93,16 +93,26 @@ const Services = () => {
       </section>
 
       
-     <section className="min-h-[50vh] flex items-center justify-center ">
+    <section className="min-h-[50vh] flex items-center justify-center bg-white">
   <div className="flex">
     <Link to="/schedule-pickup">
-      <button className="glow-button  flex items-center gap-2">
+      <button className="glow-button flex items-center gap-2 group">
         Schedule Pickup
-        <ArrowRight size={20} />
+        <span className="transition-all duration-300">
+          <ArrowRight
+            className="inline-block group-hover:hidden"
+            size={20}
+          />
+          <ArrowDown
+            className="hidden group-hover:inline-block"
+            size={20}
+          />
+        </span>
       </button>
     </Link>
   </div>
 </section>
+
 
 
     </>
